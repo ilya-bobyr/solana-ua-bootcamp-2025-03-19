@@ -1,9 +1,0 @@
-/projects/solana-ua-bootcamp-2025-03-19/practice-1/rust-exercises/keypair-service/target/debug/deps/libnum_enum_derive-cc39eed4785b675f.so: /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/lib.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/enum_attributes.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/parsing.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/utils.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/variant_attributes.rs
-
-/projects/solana-ua-bootcamp-2025-03-19/practice-1/rust-exercises/keypair-service/target/debug/deps/num_enum_derive-cc39eed4785b675f.d: /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/lib.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/enum_attributes.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/parsing.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/utils.rs /home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/variant_attributes.rs
-
-/home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/lib.rs:
-/home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/enum_attributes.rs:
-/home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/parsing.rs:
-/home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/utils.rs:
-/home/slawa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_enum_derive-0.7.3/src/variant_attributes.rs:

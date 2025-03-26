@@ -1,1 +1,0 @@
-/projects/solana-ua-bootcamp-2025-03-19/practice-1/rust-exercises/keypair-service/target/debug/keypair-sevice: /projects/solana-ua-bootcamp-2025-03-19/practice-1/rust-exercises/keypair-service/src/main.rs
