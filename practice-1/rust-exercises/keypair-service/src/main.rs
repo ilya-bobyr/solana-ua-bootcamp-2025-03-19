@@ -4,6 +4,7 @@ use dotenv::from_filename;
 use std::env;
 use std::io;
 use std::fs;
+use std::time::Instant;
 
 fn main() {
     dotenv().ok();
@@ -37,7 +38,47 @@ fn main() {
 
 
 fn generate_keys() {
-    let keypair: Keypair = Keypair::new();
+    let mut prefix: String = String::new();
+    let mut keypair: Keypair = Keypair::new();
+
+    println!("\x1b[32m----------------------------\x1b[0m");
+    println!("Enter the desired prefix (3 characters max) or press enter to generate keys without a prefix:");
+    match io::stdin().read_line(&mut prefix) {
+        Ok(_pre) => {
+            if _pre > 4 {
+                println!("❌ Error: \x1b[91mPrefix is too long (allowed 3 characters max)\x1b[0m");
+                return;
+            } else if _pre > 1 {
+                let mut attempts = 0;
+                let start_time: Instant = Instant::now();
+                let _prefix_value: &str = &prefix.trim();
+
+                loop {
+                    let _keypair_trial = Keypair::new();
+                    let _pubkey_str = bs58::encode(_keypair_trial.pubkey().to_bytes()).into_string();
+                    attempts += 1;
+            
+                    if _pubkey_str.starts_with(_prefix_value) {
+                        println!("\x1b[32m----------------------------\x1b[0m");
+                        println!("✅ Found a key with prefix \x1b[4;34m{}\x1b[0m", prefix);
+                        println!("Attempts: {}", attempts);
+                        println!("Time: {:.2?}", start_time.elapsed());
+
+                        keypair = _keypair_trial;
+                        break;
+                    }
+                    if attempts % 100_000 == 0 {
+                        println!("Attempts: {}. Let's continue", attempts);
+                    }
+                }
+            } 
+
+        }
+
+        Err(_e) => {
+            println!("\x1b[31mInput error-{}\x1b[0m", _e)
+        }
+    }
 
     let private_key: String = bs58::encode(keypair.to_bytes()).into_string();
     let public_key: String = keypair.pubkey().to_string();
@@ -53,8 +94,6 @@ fn generate_keys() {
 }
 
 fn read_keys() {
-       
-    
     let private_key = match env::var("PRIVATE_KEY") {
         Ok(key) => key,
         Err(_) => {
@@ -63,7 +102,7 @@ fn read_keys() {
         }
     };
 
-    let _private_key_bytes = match bs58::decode(&private_key).into_vec() {
+    let _private_key_bytes: Vec<u8> = match bs58::decode(&private_key).into_vec() {
         Ok(bytes) if bytes.len() == 64 => bytes,
         _ => {
             eprintln!("❌ Error: \x1b[91mInvalid private key format\x1b[0m");
